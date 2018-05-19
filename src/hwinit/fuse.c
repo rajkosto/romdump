@@ -5,11 +5,6 @@
 #include "clock.h"
 #include "timer.h"
 
-/* Prototypes for internal commands. */
-void fuse_enable_power(void);
-void fuse_disable_power(void);
-void fuse_wait_idle(void);
-
 /* Initialize the FUSE driver */
 void fuse_init(void)
 {
@@ -44,7 +39,7 @@ void fuse_disable_power(void)
 }
 
 /* Wait for the fuse driver to go idle */
-void fuse_wait_idle(void)
+static void fuse_wait_idle(void)
 {
     uint32_t ctrl_val = 0;
 

@@ -175,8 +175,17 @@ static inline volatile fuse_chip_registers_t *get_fuse_chip_regs(void) {
 #define FUSE_REGS       (get_fuse_regs())
 #define FUSE_CHIP_REGS  (get_fuse_chip_regs())
 
+/* Initialize the fuse driver */
 void fuse_init(void);
+
+/* Make all fuse registers visible */
 void fuse_make_regs_visible(void);
+
+/* Enable power to the fuse hardware array */
+void fuse_enable_power(void);
+
+/* Disable power to the fuse hardware array */
+void fuse_disable_power(void);
 
 uint32_t fuse_hw_read(uint32_t addr);
 void fuse_hw_write(uint32_t value, uint32_t addr);

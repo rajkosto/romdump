@@ -6,7 +6,7 @@ endif
 
 include $(DEVKITARM)/base_tools
 
-name := gptrestore
+name := romdump
 
 dir_source := src
 dir_build := build
